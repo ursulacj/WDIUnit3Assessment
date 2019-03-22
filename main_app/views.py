@@ -20,9 +20,9 @@ def delete(request):
         items = Item.objects.all()
         item_id = int(request.POST.get('item_id'))
         item.delete()
-        return HttpResponseRedirect('home.html')
-
-    return render(request, 'home.html', {'form': form})
+        return render(request, 'home.html', {
+            'items' : items,
+        })
 
 class ItemCreate(CreateView):
     model = Item

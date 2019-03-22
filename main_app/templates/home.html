@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Wish  List Items</h1>
+
+<div class = "wishlistWrapper">
+    {% for item in items %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>{{ item.description }}</td>
+                
+                <td class="delete">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="X" class = "waves-effect waves-light btn red">
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <div class="divider"></div>
+    {% empty %}
+        <h4 class="noView">No Wish Items Exist</h3>
+        <div class="divider"></div>
+    {% endfor %}
+
+    <form action="#">
+        <a class="waves-effect waves-light btn-large addItem" href="{% url 'items_create' %}">Add an Item</a>
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
+

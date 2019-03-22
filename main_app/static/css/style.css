@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+    margin: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wishlistWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.noView {
+    border-bottom: 2px solid gray; 
+}
+
+table {
+    width: 80%;
+    margin: 25px;
+}
+
+.addItem {
+    width: 100%;
+
+}
+
+
+td {
+    font-size: large;
+}
+
+

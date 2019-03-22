@@ -17,9 +17,9 @@ def home(request):
 def delete(request):
     if request.method == 'POST':
         form = DeleteForm(request.POST)
-        # items = Item.objects.all()
-        # item_id = int(request.POST.get('item_id'))
-        # item.delete()
+        items = Item.objects.all()
+        item_id = int(request.POST.get('item_id'))
+        item.delete()
         return HttpResponseRedirect('home.html')
 
     return render(request, 'home.html', {'form': form})
